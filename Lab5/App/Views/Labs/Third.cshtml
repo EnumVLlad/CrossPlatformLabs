@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Third Lab";
+}
+
+<h2>Third Lab</h2>
+
+<div style="margin-bottom: 20px;">
+    <div>
+        Тезею з лабіринту Мінотавра допоміг вийти клубок ниток. Ви можете замість клубка використовувати персональний комп'ютер.<br>
+        Потрібно написати програму, яка вводить маршрут Тезея в лабіринті і знаходить найкоротший зворотний шлях, яким Тезей зможе вийти з лабіринту, не заходячи в глухий кут і не роблячи петель.<br>
+        Вхідні дані: маршрут Тезея, який представлений рядком, що складається з літер: N, S, W, E та довжиною від 1 до 200.<br>
+        Літери означають:<br>
+        N - один "крок" на північ, S - один "крок" на південь, W - один "крок" на захід, E - один "крок" на схід.<br>
+        Результат: аналогічно до вхідних даних знайдений зворотний шлях.<br><br>
+    </div>
+    <form asp-action="Third" method="post" style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 500px;">
+        <label for="inputText" style="font-weight: bold;">Введіть вхідні дані:</label>
+        <textarea id="inputText" name="inputText" rows="6" style="padding: 10px; font-family: Arial, sans-serif; resize: vertical;"></textarea>
+        <button type="submit" style="padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer;">Виконати</button>
+    </form>
+</div>
+
+@if (ViewBag.OutputResult != null)
+{
+    <div style="margin-top: 20px;">
+        <h3 style="font-weight: bold;">Результат:</h3>
+        <div style="width: 100%; max-width: 500px; padding: 10px; font-family: Arial, sans-serif;">@ViewBag.OutputResult</div>
+    </div>
+}

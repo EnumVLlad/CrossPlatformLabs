@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "First Lab";
+}
+
+<h2>First Lab</h2>
+
+<div style="margin-bottom: 20px;">
+    <div>
+        Сьогодні в космосі знаходяться сотні супутників, і всі вони обмінюються даними. При цьому система розпізнавання сигналів працює за схемою "Свій-Чужий". Один із супутників відправляє запит іншому супутнику у форматі двох цілих чисел, а другий супутник відповідає першому так само двома цілими числами. Перші два числа першого супутника є сумою цифр і кількість цифр тих двох чисел, якими повинен відповісти другий супутник. При цьому як відповідь повинні вийти числа, що становлять найбільше і найменше можливі значення, які можуть бути сформовані за описаним вище методом.<br>
+        Вхідні дані<br>
+        2 натуральні числа S і K, що представляють суму та кількість цифр відповідно (K ≤ 100). При цьому гарантується, що можна скласти хоча б одне K-значне число, сума цифр якого дорівнює S.<br>
+        Вихідні дані<br>
+        Два числа – відповідь другого супутника.<br><br>
+    </div>
+    <form asp-action="First" method="post" style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 500px;">
+        <label for="inputText" style="font-weight: bold;">Введіть вхідні дані:</label>
+        <textarea id="inputText" name="inputText" rows="6" style="padding: 10px; font-family: Arial, sans-serif; resize: vertical;"></textarea>
+        <button type="submit" style="padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer;">Виконати</button>
+    </form>
+</div>
+
+@if (ViewBag.OutputResult != null)
+{
+    <div style="margin-top: 20px;">
+        <h3 style="font-weight: bold;">Результат:</h3>
+        <div style="width: 100%; max-width: 500px; padding: 10px; font-family: Arial, sans-serif;">@ViewBag.OutputResult</div>
+    </div>
+}
